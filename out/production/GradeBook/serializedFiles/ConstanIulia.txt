@@ -1,0 +1,3 @@
+Tema: 1 ; Nota: 7 ; Predata in saptamana: 2019-11-05 11:23 ; Deadline: 12 ; Feedback: Ai grija la Repo
+Tema: 2 ; Nota: 6 ; Predata in saptamana: 2019-11-12 11:21 ; Deadline: 6 ; Feedback: Nasoluc
+Tema: 2 ; Nota: 7 ; Predata in saptamana: 2019-11-12 11:23 ; Deadline: 6 ; Feedback: Nu conteaza

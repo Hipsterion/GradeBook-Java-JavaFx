@@ -1,0 +1,26 @@
+.content-section{
+    -fx-background-color: #7eae9d;
+}
+.button.ok{
+    -fx-background-color: mediumSeaGreen;
+    -fx-text-fill: white;
+}
+.button.cancel{
+    -fx-background-color: white;
+}
+.label.presentation{
+    -fx-text-fill: black;
+}
+.label.preview{
+    -fx-text-fill: white;
+}
+.label.header{
+    -fx-font-size: 30;
+    -fx-font-family: Arial;
+    -fx-text-fill: white;
+}
+.text-area.larger{
+    -fx-control-inner-background: #7eae9d;
+    -fx-border-color: white;
+
+}

@@ -1,0 +1,56 @@
+.text-field.error {
+    -fx-text-box-border: red ;
+    -fx-border-insets: -1;
+    -fx-border-width: 1;
+    -fx-border-color: red;
+    -fx-focus-color: red ;
+}
+.text-field{
+    -fx-font-size: 10pt;
+    -fx-font-family: Arial;
+    -fx-focus-color: #039ED3;
+    -fx-faint-focus-color: #039ED322;
+}
+.text-field.search{
+    -fx-font-size: 9pt;
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-weight: bold;
+    -fx-background-color: dodgerblue;
+}
+.button.save{
+    -fx-background-color: mediumSeaGreen;
+}
+.button.reset{
+    -fx-background-color: white;
+    -fx-text-fill: gray;
+}
+
+.label.header{
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;
+    -fx-font-size: 15pt;
+}
+.label.error{
+    -fx-font-size: 9pt;
+    -fx-text-fill: white;
+    -fx-background-color: red;
+
+}
+.content-section{
+    -fx-background-color: dodgerBlue;
+}
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+.table-row-cell:selected{
+    -fx-background-color: dodgerBlue;
+}
+.table-row-cell:selected .text {
+    -fx-fill: #ffffff;
+}

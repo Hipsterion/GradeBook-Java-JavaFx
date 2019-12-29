@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="643.0" prefWidth="1082.0" stylesheets="@../css/statisticsPreview.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.presentationLayer.GUI.controllers.StatisticsPreviewController">
+   <children>
+      <PieChart fx:id="report4PieChart" prefHeight="274.0" prefWidth="541.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="541.0" AnchorPane.topAnchor="0.0" />
+      <PieChart fx:id="report3PieChart" layoutX="541.0" prefHeight="274.0" prefWidth="545.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="541.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0" />
+      <PieChart fx:id="report1PieChart" layoutX="271.0" layoutY="322.0" prefHeight="302.0" prefWidth="554.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="257.0" />
+      <Label styleClass="chartLabel" fx:id="caption" prefHeight="5.0" prefWidth="11.0" text="Label" visible="false" />
+   </children>
+</AnchorPane>

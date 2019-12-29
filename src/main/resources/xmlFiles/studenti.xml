@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<studenti>
+    <student email="vasandi@gmail.com" grupa="232" id="1" nume="Vasilian" prenume="Andrei" profesor="Mormoci Andreea"/>
+    <student email="constaniuliua@yahoo.com" grupa="212" id="3" nume="Constan" prenume="Iulia"
+             profesor="Margareta Alexa"/>
+</studenti>

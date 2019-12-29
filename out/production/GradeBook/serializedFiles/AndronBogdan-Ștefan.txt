@@ -1,0 +1,5 @@
+Tema: 8 ; Nota: 10 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: asda
+Tema: 5 ; Nota: 7 ; Predata in saptamana: 2019-11-13 12:00 ; Deadline: 5 ; Feedback: Ai intarziat 2 saptamani.
+Tema: 8 ; Nota: 1 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: Ai intarziat 2 saptamani.
+Tema: 8 ; Nota: 1 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: Ai intarziat 2 saptamani.
+Tema: 2 ; Nota: 1 ; Predata in saptamana: 2019-12-30 12:00 ; Deadline: 13 ; Feedback: Ai intarziat 2 saptamani.

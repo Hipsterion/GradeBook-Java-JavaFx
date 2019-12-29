@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="org.jsonddl:jsonddl:0.1.1" type="repository">
+    <properties maven-id="org.jsonddl:jsonddl:0.1.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jsonddl/jsonddl/0.1.1/jsonddl-0.1.1.jar!/" />
+      <root url="file://$MAVEN_REPOSITORY$/org/jsonddl/jsonddl/0.1.1" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+    <jarDirectory url="file://$MAVEN_REPOSITORY$/org/jsonddl/jsonddl/0.1.1" recursive="false" />
+  </library>
+</component>

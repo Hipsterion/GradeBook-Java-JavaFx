@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<note>
+    <grade data="2019-11-12 11:23" feedback="Se putea mai ok" id="1-1" idSt="1" idTema="1" profesor="Iancu Marcel"
+          value="6"/>
+    <grade data="2019-12-11 23:23" feedback="Se putea mai rau" id="1-2" idSt="1" idTema="2" profesor="Vasile Ion"
+          value="7"/>
+    <grade data="2019-11-05 11:23" feedback="Ai grija la Repo" id="3-1" idSt="3" idTema="1" profesor="Iancu Andrei"
+          value="7"/>
+    <grade data="2019-11-12 11:23" feedback="Nu conteaza" id="3-2" idSt="3" idTema="2" profesor="Cutare" value="7"/>
+</note>

@@ -1,0 +1,123 @@
+.text-field{
+    -fx-font-size: 10pt;
+    -fx-font-family: Arial;
+    -fx-focus-color: #ffffff;
+    -fx-faint-focus-color: rgba(250, 255, 231, 0.43);
+}
+.text-field.search{
+    -fx-font-size: 9pt;
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Bahnschrift";
+    -fx-font-weight: bold;
+    -fx-background-color: #7eae9d;
+}
+.button.save{
+    -fx-background-color: mediumSeaGreen;
+}
+
+.toggle-button{
+    -fx-focus-color: #7eae9d;
+}
+.button.reset{
+    -fx-background-color: white;
+    -fx-text-fill: gray;
+}
+
+.label.header{
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;
+    -fx-font-size: 15pt;
+}
+.label.error{
+    -fx-font-size: 15pt;
+    -fx-text-fill: white;
+    -fx-background-color: #4947d4;
+
+}
+.content-section{
+    -fx-background-color: #7eae9d;
+}
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+.split-pane:vertical > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+.table-row-cell:selected{
+    -fx-background-color: #7eae9d;
+}
+.table-row-cell:selected .text {
+    -fx-fill: #ffffff;
+    -fx-alignment: center;
+}
+.table-view{
+    -fx-focus-color: #7eae9d;
+}
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+.error-label {
+    -fx-text-fill: #a31523;
+    -fx-text-alignment: center;
+    -fx-font-size: 8pt;
+}
+.jfx-text-field.header {
+    -fx-text-fill: blue;
+}
+.jfx-text-field.error {
+    -fx-text-fill: blue;
+}
+.jfx-text-field.error-label {
+    -fx-text-fill: blue;
+}
+.jfx-text-field.float-label{
+    -fx-text-fill: yellow;
+}
+.jfx-autocomplete-popup .list-cell:filled:selected {
+    -fx-background-color: #64ffe6;
+}
+/*Change cells of autocomplete popup*/
+.jfx-autocomplete-popup .list-cell {
+    -fx-background-color: #5f68ff;
+}
+
+.combo-box .list-cell {
+    -fx-cell-size: 30;
+    -fx-font-size: 12;
+    -fx-pref-width: 220;
+}
+
+.combo-box{
+    -fx-font-size: 10pt;
+    -fx-font-family: Arial;
+    -fx-faint-focus-color: rgba(250, 255, 231, 0.43);
+}
+.date-picker-popup > .month-year-pane {
+    -fx-padding: 0.588883em 0.5em 0.666667em 0.5em; /* 7 6 8 6 */
+    -fx-bakground-color: #7eae9d;
+    -fx-background-insets: 0 0 0 0, 0 0 1 0;
+}
+.jfx-date-picker .jfx-text-field{
+    -jfx-unfocus-color: white;
+    -jfx-focus-color: #4059a9;
+    -jfx-label-float: true;
+
+}
+.jfx-date-picker{
+    -jfx-label-float: true;
+}
+.jfx-text-area{
+    -fx-font-size: 10pt;
+    -fx-font-family: Arial;
+    -fx-faint-focus-color: rgba(250, 255, 231, 0.43);
+    -fx-float-label-alignment: BOTTOM_LEFT;
+}
+.sd{
+
+}
+
+
+

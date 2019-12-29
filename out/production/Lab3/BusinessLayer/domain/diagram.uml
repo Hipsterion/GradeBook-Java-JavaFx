@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="800.0666666666666" y="96.0">domain.Student</node>
+    <node x="83.0" y="511.0">validators.StudentValidator</node>
+    <node x="97.75" y="319.0">validators.Validator</node>
+    <node x="0.0" y="395.0">validators.TemaValidator</node>
+    <node x="294.06666666666666" y="96.0">domain.Profesor</node>
+    <node x="514.5" y="248.0">repositories.StudentFileRepository</node>
+    <node x="727.5" y="248.0">repositories.TemaFileRepository</node>
+    <node x="109.06666666666666" y="96.0">domain.StructuraSemestru</node>
+    <node x="372.56666666666666" y="0.0">domain.Entity</node>
+    <node x="612.25" y="172.0">repositories.AbstractFileRepository</node>
+    <node x="15.066666666666663" y="96.0">domain.Tema</node>
+    <node x="241.0" y="248.0">repositories.TemaInMemoryRepository</node>
+    <node x="360.0" y="319.0">exceptions.ValidationException</node>
+    <node x="0.0" y="248.0">repositories.StudentInMemoryRepository</node>
+    <node x="416.06666666666666" y="96.0">repositories.CrudRepository</node>
+    <node x="580.0666666666666" y="96.0">domain.StructuraAnUniversitar</node>
+    <node x="139.75" y="172.0">repositories.InMemoryRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="repositories.InMemoryRepository" target="domain.Entity">
+      <point x="-43.0" y="-13.0" />
+      <point x="182.75" y="147.0" />
+      <point x="4.566666666666663" y="147.0" />
+      <point x="4.566666666666663" y="46.0" />
+      <point x="378.06666666666666" y="46.0" />
+      <point x="-38.5" y="13.0" />
+    </edge>
+    <edge source="repositories.StudentFileRepository" target="repositories.AbstractFileRepository">
+      <point x="0.0" y="-13.0" />
+      <point x="611.0" y="223.0" />
+      <point x="662.25" y="223.0" />
+      <point x="-50.0" y="13.0" />
+    </edge>
+    <edge source="domain.Profesor" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="345.06666666666666" y="76.0" />
+      <point x="411.06666666666666" y="76.0" />
+      <point x="-5.5" y="13.0" />
+    </edge>
+    <edge source="domain.Tema" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="52.06666666666666" y="56.0" />
+      <point x="389.06666666666666" y="56.0" />
+      <point x="-27.5" y="13.0" />
+    </edge>
+    <edge source="repositories.StudentInMemoryRepository" target="repositories.InMemoryRepository">
+      <point x="0.0" y="-13.0" />
+      <point x="110.5" y="223.0" />
+      <point x="182.75" y="223.0" />
+      <point x="-43.0" y="13.0" />
+    </edge>
+    <edge source="validators.StudentValidator" target="validators.Validator">
+      <point x="0.0" y="-13.0" />
+      <point x="236.0" y="370.0" />
+      <point x="179.5" y="370.0" />
+      <point x="27.25" y="13.0" />
+    </edge>
+    <edge source="domain.StructuraSemestru" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="191.56666666666666" y="66.0" />
+      <point x="400.06666666666666" y="66.0" />
+      <point x="-16.5" y="13.0" />
+    </edge>
+    <edge source="domain.StructuraAnUniversitar" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="680.0666666666666" y="66.0" />
+      <point x="433.06666666666666" y="66.0" />
+      <point x="16.5" y="13.0" />
+    </edge>
+    <edge source="repositories.InMemoryRepository" target="repositories.CrudRepository">
+      <point x="43.0" y="-13.0" />
+      <point x="268.75" y="147.0" />
+      <point x="452.06666666666666" y="147.0" />
+      <point x="-36.0" y="13.0" />
+    </edge>
+    <edge source="domain.Student" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="847.5666666666666" y="56.0" />
+      <point x="444.06666666666666" y="56.0" />
+      <point x="27.5" y="13.0" />
+    </edge>
+    <edge source="repositories.TemaInMemoryRepository" target="repositories.InMemoryRepository">
+      <point x="0.0" y="-13.0" />
+      <point x="341.0" y="223.0" />
+      <point x="268.75" y="223.0" />
+      <point x="43.0" y="13.0" />
+    </edge>
+    <edge source="validators.TemaValidator" target="validators.Validator">
+      <point x="0.0" y="-13.0" />
+      <point x="68.5" y="370.0" />
+      <point x="125.0" y="370.0" />
+      <point x="-27.25" y="13.0" />
+    </edge>
+    <edge source="repositories.CrudRepository" target="domain.Entity">
+      <point x="0.0" y="-13.0" />
+      <point x="488.06666666666666" y="76.0" />
+      <point x="422.06666666666666" y="76.0" />
+      <point x="5.5" y="13.0" />
+    </edge>
+    <edge source="repositories.AbstractFileRepository" target="repositories.CrudRepository">
+      <point x="-50.0" y="-13.0" />
+      <point x="662.25" y="147.0" />
+      <point x="524.0666666666666" y="147.0" />
+      <point x="36.0" y="13.0" />
+    </edge>
+    <edge source="repositories.AbstractFileRepository" target="domain.Entity">
+      <point x="50.0" y="-13.0" />
+      <point x="762.25" y="147.0" />
+      <point x="905.5666666666666" y="147.0" />
+      <point x="905.5666666666666" y="46.0" />
+      <point x="455.06666666666666" y="46.0" />
+      <point x="38.5" y="13.0" />
+    </edge>
+    <edge source="repositories.TemaFileRepository" target="repositories.AbstractFileRepository">
+      <point x="0.0" y="-13.0" />
+      <point x="813.5" y="223.0" />
+      <point x="762.25" y="223.0" />
+      <point x="50.0" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="511.0" y="208.0" />
+  <SelectedNodes>
+    <node>validators.StudentValidator</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

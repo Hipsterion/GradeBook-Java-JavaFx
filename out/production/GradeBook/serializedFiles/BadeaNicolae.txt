@@ -1,0 +1,5 @@
+Tema: 5 ; Nota: 7 ; Predata in saptamana: 2019-11-11 12:23 ; Deadline: 12 ; Feedback: Bine
+Tema: 5 ; Nota: 6 ; Predata in saptamana: 2019-11-23 11:21 ; Deadline: 12 ; Feedback: sdf
+Tema: 5 ; Nota: 6 ; Predata in saptamana: 2019-11-11 11:23 ; Deadline: 12 ; Feedback: dsfsdf
+Tema: 5 ; Nota: 3 ; Predata in saptamana: 2019-11-23 11:21 ; Deadline: 12 ; Feedback: assd
+Tema: 8 ; Nota: 7 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: 

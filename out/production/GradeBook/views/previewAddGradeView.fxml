@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane minHeight="200.0" minWidth="200.0" prefHeight="475.0" prefWidth="427.0" styleClass="content-section" stylesheets="@../css/gradePreviewStyles.css" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.presentationLayer.GUI.controllers.PreviewAddGradeController">
+    <children>
+        <GridPane layoutX="102.0" layoutY="71.0" prefHeight="196.0" prefWidth="269.0" vgap="40.0" AnchorPane.bottomAnchor="97.19999999999999" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="55.39999999999998" AnchorPane.topAnchor="71.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="53.6" minHeight="0.0" prefHeight="4.800000000000001" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="6.199987792968749" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.599999999999994" minHeight="0.0" prefHeight="12.800048828125" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.599999999999994" minHeight="0.0" prefHeight="8.799951171874994" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.599999999999994" minHeight="0.0" prefHeight="10.399987792968744" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.599999999999994" minHeight="0.0" prefHeight="12.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="17.0" prefWidth="120.0" styleClass="presentation" text="Student" />
+                <Label prefHeight="98.0" prefWidth="120.0" styleClass="presentation" text="Tema" GridPane.rowIndex="1" />
+                <Label prefHeight="17.0" prefWidth="128.0" styleClass="presentation" text="Data predare" GridPane.rowIndex="2" />
+                <Label prefHeight="17.0" prefWidth="130.0" styleClass="presentation" text="Profesor" GridPane.rowIndex="3" />
+                <Label prefHeight="17.0" prefWidth="120.0" styleClass="presentation" text="Nota" GridPane.rowIndex="4" />
+                <Label prefHeight="0.0" prefWidth="120.0" styleClass="presentation" text="Feedback" GridPane.rowIndex="5" />
+            <Label fx:id="labelStudent" prefHeight="17.0" prefWidth="120.0" styleClass="preview" text="TEXT HERE" GridPane.columnIndex="1" />
+            <Label fx:id="labelTema" prefHeight="0.0" prefWidth="120.0" styleClass="preview" text="TEXT HERE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="labelDate" prefHeight="17.0" prefWidth="120.0" styleClass="preview" text="TEXT HERE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="labelProfesor" prefHeight="17.0" prefWidth="120.0" styleClass="preview" text="TEXT HERE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="labelValue" prefHeight="17.0" prefWidth="120.0" styleClass="preview" text="TEXT HERE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextArea fx:id="labelFeedback" editable="false" minHeight="50.0" minWidth="160.0" prefHeight="100.0" prefWidth="135.0" styleClass="larger" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            </children>
+        </GridPane>
+        <ButtonBar layoutX="68.0" layoutY="396.0" prefHeight="67.0" prefWidth="270.0">
+            <buttons>
+                <Button mnemonicParsing="false" onAction="#handleSave" prefHeight="26.0" prefWidth="234.0" styleClass="ok" text="Ok, save" />
+                <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="26.0" styleClass="cancel" text="Cancel" />
+            </buttons>
+        </ButtonBar>
+      <Label alignment="CENTER" layoutX="85.0" layoutY="4.0" prefHeight="50.0" prefWidth="230.0" styleClass="header" text="Preview Grade" textAlignment="CENTER" />
+    </children>
+</AnchorPane>
