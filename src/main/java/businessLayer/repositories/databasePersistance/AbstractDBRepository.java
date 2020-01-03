@@ -117,6 +117,14 @@ public abstract class AbstractDBRepository<ID, E extends Entity<ID>> implements 
 
     @Override
     public E delete(ID id) {
+        if(tableName == "student") {
+            var relatedQuery = "delete from nota where idstudent =" + id.toString();
+            try {
+                statement.executeUpdate(relatedQuery);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         E entity = findOne(id);
         if(entity == null) return null;
         String query=null;
