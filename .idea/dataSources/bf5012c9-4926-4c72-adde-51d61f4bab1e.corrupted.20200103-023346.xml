@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.16">
+    <root id="1">
+      <ServerVersion>12.0</ServerVersion>
+<<<<<<< HEAD
+      <StartupTime>1574595352</StartupTime>
+=======
+      <StartupTime>1577529445</StartupTime>
+>>>>>>> Add reports and statistics as visual diagrams
+    </root>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>13318</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <Owner>postgres</Owner>
+<<<<<<< HEAD
+      <IntrospectionStateNumber>689</IntrospectionStateNumber>
+=======
+      <IntrospectionStateNumber>733</IntrospectionStateNumber>
+>>>>>>> Add reports and statistics as visual diagrams
+      <Current>1</Current>
+    </database>
+    <role id="3" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
+    </role>
+    <role id="4" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+    </role>
+    <role id="5" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+    </role>
+    <role id="6" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+    </role>
+    <role id="7" parent="1" name="pg_read_server_files">
+      <ObjectId>4569</ObjectId>
+    </role>
+    <role id="8" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+    </role>
+    <role id="9" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+    </role>
+    <role id="10" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="information_schema">
+      <ObjectId>13018</ObjectId>
+      <StateNumber>282</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>275</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="14" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>276</StateNumber>
+      <Owner>postgres</Owner>
+<<<<<<< HEAD
+      <IntrospectionStateNumber>690</IntrospectionStateNumber>
+=======
+      <IntrospectionStateNumber>734</IntrospectionStateNumber>
+>>>>>>> Add reports and statistics as visual diagrams
+      <Current>1</Current>
+    </schema>
+    <access-method id="15" parent="2" name="heap">
+      <ObjectId>2</ObjectId>
+      <Comment>heap table access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.heap_tableam_handler</Handler>
+      <HandlerId>3</HandlerId>
+    </access-method>
+    <access-method id="16" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="17" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="22" parent="2" name="adminpack">
+      <ObjectId>16384</ObjectId>
+      <Comment>administrative functions for PostgreSQL</Comment>
+      <StateNumber>487</StateNumber>
+      <Version>2.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <extension id="23" parent="2" name="plpgsql">
+      <ObjectId>13304</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>437</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <table id="24" parent="14" name="nota">
+      <ObjectId>16411</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>666</StateNumber>
+    </table>
+    <table id="25" parent="14" name="student">
+      <ObjectId>16399</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>666</StateNumber>
+    </table>
+    <table id="26" parent="14" name="tema">
+      <ObjectId>16405</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>669</StateNumber>
+    </table>
+    <column id="27" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="28" parent="24" name="idstudent">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="29" parent="24" name="idtema">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="30" parent="24" name="data">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="31" parent="24" name="profesor">
+      <Position>5</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="32" parent="24" name="value">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>555</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="33" parent="24" name="feedback">
+      <Position>7</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="34" parent="24" name="nota_id_uindex">
+      <ObjectId>16414</ObjectId>
+      <StateNumber>556</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="35" parent="24" name="nota_pk">
+      <ObjectId>16415</ObjectId>
+      <StateNumber>557</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="36" parent="24" name="nota_pk">
+      <ObjectId>16416</ObjectId>
+      <StateNumber>557</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>nota_pk</UnderlyingIndexName>
+    </key>
+    <foreign-key id="37" parent="24" name="nota_idstudent_fkey">
+      <ObjectId>16417</ObjectId>
+      <StateNumber>666</StateNumber>
+      <ColNames>idstudent</ColNames>
+      <RefTableId>16399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>student</RefTableName>
+      <RefKeyName>student_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="24" name="nota_idtema_fkey">
+      <ObjectId>16422</ObjectId>
+      <StateNumber>669</StateNumber>
+      <ColNames>idtema</ColNames>
+      <RefTableId>16405</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>tema</RefTableName>
+      <RefKeyName>tema_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="40" parent="25" name="nume">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="41" parent="25" name="prenume">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="42" parent="25" name="grupa">
+      <Position>4</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="43" parent="25" name="email">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="25" name="profesor">
+      <Position>6</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>509</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="45" parent="25" name="student_id_uindex">
+      <ObjectId>16402</ObjectId>
+      <StateNumber>510</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="25" name="student_pk">
+      <ObjectId>16403</ObjectId>
+      <StateNumber>511</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="47" parent="25" name="student_pk">
+      <ObjectId>16404</ObjectId>
+      <StateNumber>511</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>student_pk</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>539</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="49" parent="26" name="descriere">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>539</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="26" name="startweek">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>539</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="26" name="deadlineweek">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>539</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="52" parent="26" name="startdate">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>539</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="53" parent="26" name="tema_id_uindex">
+      <ObjectId>16408</ObjectId>
+      <StateNumber>540</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="54" parent="26" name="tema_pk">
+      <ObjectId>16409</ObjectId>
+      <StateNumber>541</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="55" parent="26" name="tema_pk">
+      <ObjectId>16410</ObjectId>
+      <StateNumber>541</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>tema_pk</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
