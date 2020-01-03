@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
@@ -86,6 +87,7 @@
                                         <Image url="@../images/statisticsIcon.png" />
                                     </image>
                               </ImageView>
+                              <JFXButton layoutX="257.0" layoutY="473.0" onAction="#handleGeneratePdf" text="Generate pdf" />
                                     </children>
                                 </AnchorPane>
                             </items>

@@ -1,6 +1,8 @@
 package main.java.serviceLayer.services;
 
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
 import main.java.businessLayer.domain.Grade;
 import main.java.businessLayer.domain.YearStructure;
 import main.java.businessLayer.domain.Student;
@@ -31,6 +33,7 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
         this.gradeRepository = gradeRepository;
         this.studentRepository = studentRepository;
         this.assignmentRepository = assignmentRepository;
+        saveReportsInPdf();
     }
 
     public Grade findOne(String id) {
@@ -185,6 +188,46 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
     }
 
     public void saveReportsInPdf() {
+        Document document = new Document();
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/pdfs/StatisticsReports.pdf"));
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
+        document.open();
+        Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
+        String pdfcontext = "Note finale studenti:\n\n";
+        try {
+            document.add(new Paragraph(pdfcontext));
+            for(var student : findAllStudents()) {
+                document.add(new Paragraph(student.getNume() + " " + student.getPrenume() + " Nota:  " + String.valueOf(getStudentFinalGradeValue(student)) + "\n"));
+            }
+            document.add(new Paragraph("\n\n"));
+            Assignment assignment = null;
+            float minVal = 11;
+            for(var ass : findAllTeme())
+                if(getAssignmentAverageResults(ass) < minVal)
+                {
+                    assignment = ass;
+                    minVal = getAssignmentAverageResults(ass);
+                }
+            document.add(new Paragraph("Cea mai grea tema: "));
+            document.add(new Paragraph("Laborator-ul din saptamana " + String.valueOf(assignment.getStartWeek()) +"-"+String.valueOf(assignment.getDeadlineWeek()) + " media: " + String.valueOf(minVal) + "\n\n\n"));
+            document.add(new Paragraph("Studentii ce pot intra in examen:\n\n"));
+            for(var student : findAllStudents())
+                if(getStudentFinalGradeValue(student) > 4.0)
+                    document.add(new Paragraph(student.getNume() + " " + student.getPrenume() + " Nota:  " + String.valueOf(getStudentFinalGradeValue(student)) + "\n"));
+            document.add(new Paragraph("\n\n"));
+            document.add(new Paragraph("Stundentii fara intarzieri:\n\n"));
+            for(var student : getStudentsWithoutDelayedAssignments())
+                document.add(new Paragraph(student.getNume() + " " + student.getPrenume() + "\n"));
+        }
+        catch (DocumentException e) {
+            e.printStackTrace();
+        }
+        document.close();
     }
 }

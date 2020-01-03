@@ -6,7 +6,43 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="629802bd-6b47-434f-b410-c37c59d081a3" name="Default Changelist" comment="" />
+    <list default="true" id="f11559d5-d0c6-4096-8a05-b0fae72982ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_5_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/pdfbox_0_7_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pdfs/StatisticsReports.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9cff2a41-87ab-423c-bd86-310948205a2a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9cff2a41-87ab-423c-bd86-310948205a2a/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9cff2a41-87ab-423c-bd86-310948205a2a/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9cff2a41-87ab-423c-bd86-310948205a2a/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9cff2a41-87ab-423c-bd86-310948205a2a/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GradeBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GradeBook.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/businessLayer/repositories/databasePersistance/AbstractDBRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/businessLayer/repositories/databasePersistance/AbstractDBRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/GradeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/StatisticsPreviewController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/StatisticsPreviewController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/StatisticsPreviewController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/presentationLayer/GUI/controllers/StatisticsPreviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/main/java/serviceLayer/services/GradeBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/main/java/serviceLayer/services/GradeBookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/views/gradeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GradeBook/views/gradeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GradeBook/views/previewStatisticsView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/GUI/controllers/GradeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/GUI/controllers/GradeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentationLayer/GUI/controllers/StatisticsPreviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentationLayer/GUI/controllers/StatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/serviceLayer/services/GradeBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serviceLayer/services/GradeBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/gradeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/gradeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/previewStatisticsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/statisticsView.fxml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,32 +65,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="PostgreSQL - postgres@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -66,6 +76,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/build.gradle">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -99,6 +112,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -107,7 +121,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="last.edited.regexp" value="asd@sad.com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pdfbox-0.7.3.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -283,7 +297,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="629802bd-6b47-434f-b410-c37c59d081a3" name="Default Changelist" comment="" />
+      <changelist id="f11559d5-d0c6-4096-8a05-b0fae72982ac" name="Default Changelist" comment="" />
       <created>1571577164002</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -392,6 +406,7 @@
       <workItem from="1576324608437" duration="659000" />
       <workItem from="1576679513650" duration="1468000" />
       <workItem from="1577637768766" duration="18729000" />
+      <workItem from="1578068133388" duration="769000" />
     </task>
     <task id="LOCAL-00001" summary="Refactorize and improve readability of code; Optimize imports">
       <created>1574894884060</created>

@@ -12,8 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +30,9 @@ import main.java.serviceLayer.services.GradeBookService;
 import main.java.serviceLayer.services.StudentService;
 import main.java.utils.events.GradeChangeEvent;
 import main.java.utils.stringExtensions.StringExtensions;
+
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -500,7 +503,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
 
     public void handleStatisticsPreview(MouseEvent mouseEvent) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/views/previewStatisticsView.fxml"));
+        loader.setLocation(getClass().getResource("/views/statisticsView.fxml"));
         AnchorPane root = null;
         try {
             root = (AnchorPane) loader.load();
@@ -509,11 +512,23 @@ public class GradeController implements Observer<GradeChangeEvent> {
             //dialogStage.initModality(Modality.APPLICATION_MODAL);
             Scene scene = new Scene(root);
             dialogStage.setScene(scene);
-            StatisticsPreviewController statisticsPreviewController = loader.getController();
-            statisticsPreviewController.setService(service);
+            StatisticsController statisticsController = loader.getController();
+            statisticsController.setService(service);
             dialogStage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void handleGeneratePdf(ActionEvent actionEvent) {
+        service.saveReportsInPdf();
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File("E:\\GradeBook-Java-JavaFx-master\\src\\main\\resources\\pdfs\\StatisticsReports.pdf");
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                // no application registered for PDFs
+            }
         }
     }
 }

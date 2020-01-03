@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.stream.StreamSupport;
 
-public class StatisticsPreviewController implements Observer<GradeChangeEvent> {
+public class StatisticsController implements Observer<GradeChangeEvent> {
     private GradeBookService service;
 
     public void setService(GradeBookService service){
