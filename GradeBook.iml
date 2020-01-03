@@ -56,5 +56,8 @@
     <orderEntry type="library" name="jfoenix-9.0.9" level="project" />
     <orderEntry type="library" name="itextpdf-5.5.13.1" level="project" />
     <orderEntry type="library" name="pdfbox-0.7.3" level="project" />
+    <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" name="activation" level="project" />
+    <orderEntry type="library" name="mail" level="project" />
   </component>
 </module>

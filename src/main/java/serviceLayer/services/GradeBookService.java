@@ -21,8 +21,13 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 public class GradeBookService implements Observable<GradeChangeEvent> {
     private CrudRepository<String, Grade> gradeRepository;
@@ -58,6 +63,50 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
         var notaOld = gradeRepository.save(nota);
         notifyObservers(new GradeChangeEvent(ChangeEventType.ADD, notaOld));
         return notaOld;
+    }
+
+    public void sendEmailToStudentWithThread(String studentMail){
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                sendEmailToStudent(studentMail);
+            }
+        });
+    }
+    public void sendEmailToStudent(String studentEmail) {
+        final String username = "mgradebook@gmail.com";  // like yourname@outlook.com
+        final String password = "cocolino123";   // password here
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+        session.setDebug(true);
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(studentEmail));   // like inzi769@gmail.com
+            message.setSubject("You've just got a new GRADE");
+            message.setText("Your teacher just gave you a grade. Check it out in the GradeBook app.");
+
+            Transport.send(message);
+
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Grade delete(String id) {
@@ -206,16 +255,9 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
                 document.add(new Paragraph(student.getNume() + " " + student.getPrenume() + " Nota:  " + String.valueOf(getStudentFinalGradeValue(student)) + "\n"));
             }
             document.add(new Paragraph("\n\n"));
-            Assignment assignment = null;
-            float minVal = 11;
-            for(var ass : findAllTeme())
-                if(getAssignmentAverageResults(ass) < minVal)
-                {
-                    assignment = ass;
-                    minVal = getAssignmentAverageResults(ass);
-                }
+            Assignment assignment = getAssignmentWithLowestGrades();
             document.add(new Paragraph("Cea mai grea tema: "));
-            document.add(new Paragraph("Laborator-ul din saptamana " + String.valueOf(assignment.getStartWeek()) +"-"+String.valueOf(assignment.getDeadlineWeek()) + " media: " + String.valueOf(minVal) + "\n\n\n"));
+            document.add(new Paragraph("Laborator-ul din saptamana " + String.valueOf(assignment.getStartWeek()) +"-"+String.valueOf(assignment.getDeadlineWeek()) + " media: " + String.valueOf(getAssignmentAverageResults(assignment)) + "\n\n\n"));
             document.add(new Paragraph("Studentii ce pot intra in examen:\n\n"));
             for(var student : findAllStudents())
                 if(getStudentFinalGradeValue(student) > 4.0)
@@ -229,5 +271,17 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
             e.printStackTrace();
         }
         document.close();
+    }
+
+    public Assignment getAssignmentWithLowestGrades() {
+        Assignment assignment = null;
+        float minVal = 11;
+        for(var ass : findAllTeme())
+            if(getAssignmentAverageResults(ass) < minVal)
+            {
+                assignment = ass;
+                minVal = getAssignmentAverageResults(ass);
+            }
+        return assignment;
     }
 }

@@ -103,10 +103,6 @@ public class GradeController implements Observer<GradeChangeEvent> {
                 setPreprocessedValues();
         });
         initializeModel();
-        reportsComboBox.getItems().add("Note finale studenti");
-        reportsComboBox.getItems().add("Cea mai grea tema");
-        reportsComboBox.getItems().add("Studentii care pot intra in examen");
-        reportsComboBox.getItems().add("Studentii fara intarzieri");
         setUpReportsComboBox();
         setUpStatisticsIcon();
     }
@@ -464,6 +460,10 @@ public class GradeController implements Observer<GradeChangeEvent> {
     }
 
     private void setUpReportsComboBox() {
+        reportsComboBox.getItems().add("Note finale studenti");
+        reportsComboBox.getItems().add("Cea mai grea tema");
+        reportsComboBox.getItems().add("Studentii care pot intra in examen");
+        reportsComboBox.getItems().add("Studentii fara intarzieri");
         reportsComboBox.valueProperty().addListener((obs, oldv, newv) -> {
                     if(newv.contains("finale")) {
                         String reportMessage = "";
@@ -473,15 +473,8 @@ public class GradeController implements Observer<GradeChangeEvent> {
                     }
                     else if(newv.contains("grea")) {
                         String reportMessage = "";
-                        Assignment assignment = null;
-                        float minVal = 11;
-                        for(var ass : service.findAllTeme())
-                            if(service.getAssignmentAverageResults(ass) < minVal)
-                            {
-                                assignment = ass;
-                                minVal = service.getAssignmentAverageResults(ass);
-                            }
-                        reportMessage += "Laborator-ul din saptamana " + String.valueOf(assignment.getStartWeek()) +"-"+String.valueOf(assignment.getDeadlineWeek()) + " media: " + String.valueOf(minVal) + "\n";
+                        Assignment assignment = service.getAssignmentWithLowestGrades();
+                        reportMessage += "Laborator-ul din saptamana " + String.valueOf(assignment.getStartWeek()) +"-"+String.valueOf(assignment.getDeadlineWeek()) + " media: " + String.valueOf(service.getAssignmentAverageResults(assignment)) + "\n";
                         MessageAlert.showMessage(null, Alert.AlertType.INFORMATION, "Tema cu cea mai mica medie a notelor primite", reportMessage);
                     }
                     else if(newv.contains("examen")) {

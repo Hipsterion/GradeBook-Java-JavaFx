@@ -65,8 +65,10 @@ public class PreviewAddGradeController {
             var notaOld = service.save(service.findStudentByNume(labelStudent.getText()).getId(), Integer.parseInt(labelTema.getText()),
                     LocalDate.parse(labelDate.getText(), DateTimeFormatter.ofPattern("yyyy-MM-dd")).atStartOfDay(),
                     labelProfesor.getText(), Integer.parseInt(labelValue.getText()), labelFeedback.getText());
-            if(notaOld == null)
+            if(notaOld == null) {
                 MessageAlert.showMessage(null, Alert.AlertType.INFORMATION, "Save", "Nota a fost adaugata cu succes");
+                service.sendEmailToStudentWithThread(service.findStudentByNume(labelStudent.getText()).getEmail());
+            }
             else MessageAlert.showErrorMessage(null, "Studentul a predat deja această temă");
         }catch (RuntimeException e){
             MessageAlert.showErrorMessage(null, "bla" + e.getMessage());
