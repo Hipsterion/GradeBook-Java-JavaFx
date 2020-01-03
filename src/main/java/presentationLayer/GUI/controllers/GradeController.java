@@ -21,16 +21,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
-import main.java.businessLayer.domain.Assignment;
-import main.java.businessLayer.domain.Grade;
-import main.java.businessLayer.domain.GradeDTO;
-import main.java.businessLayer.domain.YearStructure;
+import main.java.businessLayer.domain.*;
 import main.java.businessLayer.repositories.databasePersistance.StudentDBRepository;
 import main.java.serviceLayer.services.GradeBookService;
 import main.java.serviceLayer.services.StudentService;
 import main.java.utils.events.GradeChangeEvent;
 import main.java.utils.stringExtensions.StringExtensions;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -39,6 +35,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Predicate;
@@ -73,8 +70,6 @@ public class GradeController implements Observer<GradeChangeEvent> {
     @FXML
     JFXTextField textFieldValue;
     @FXML
-    TextField textFieldSearch;
-    @FXML
     JFXTextArea textArea;
     @FXML
     JFXComboBox<String> temaComboBox;
@@ -88,7 +83,8 @@ public class GradeController implements Observer<GradeChangeEvent> {
     ComboBox<String> reportsComboBox;
     @FXML
     ImageView statisticsIcon;
-
+    @FXML
+    TextField searchTextField;
 
     public void setService(GradeBookService service) {
         this.service = service;
@@ -102,7 +98,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
             if (StringExtensions.isInteger(textFieldValue.getText()))
                 setPreprocessedValues();
         });
-        initializeModel();
+        initializeModel(service.findAll());
         setUpReportsComboBox();
         setUpStatisticsIcon();
     }
@@ -251,7 +247,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
     }
 
     private void setUpStudentComboBox() {
-        var students = StreamSupport.stream(service.findAllStudents().spliterator(), false).map(x -> x.getNume() + " " + x.getPrenume()).collect(Collectors.toList());
+        var students = StreamSupport.stream(service.findAllStudents().spliterator(), false).sorted(Comparator.comparing(Student::getNume)).map(x -> x.getNume() + " " + x.getPrenume()).collect(Collectors.toList());
         TextFields.bindAutoCompletion(studentComboBox.getEditor(), students);
         studentComboBox.getItems().addAll(students);
     }
@@ -274,6 +270,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
     @FXML
     public void initialize() {
         setUpTable();
+        searchTextField.textProperty().addListener((obs, oldText, newText) -> updateModelAfterSearch(newText));
         setUpComboBoxValidation(studentComboBox, new Predicate() {
             @Override
             public boolean test(Object o) {
@@ -305,6 +302,20 @@ public class GradeController implements Observer<GradeChangeEvent> {
             }
         }, "This must be an integer number");
         setUpDatePickerFormatter();
+    }
+
+    private void updateModelAfterSearch(String input) {
+        if(input.equals("")) initializeModel(service.findAll());
+        else {
+            try {
+                var grades = StreamSupport.stream(service.findAll().spliterator(), false).filter(s -> {
+                    var student = service.findStudent(s.getIdStudent());
+                    return (student.getNume() + " " + student.getPrenume()).toUpperCase().contains(input.toUpperCase());}).collect(Collectors.toList());
+                initializeModel(grades);
+            }catch (RuntimeException e) {
+                model.clear();
+            }
+        }
     }
 
 
@@ -382,8 +393,8 @@ public class GradeController implements Observer<GradeChangeEvent> {
         gradesTableView.setItems(model);
     }
 
-    private void initializeModel() {
-        Iterable<Grade> students = service.findAll();
+    private void initializeModel(Iterable<Grade> list) {
+        Iterable<Grade> students = list;
         List<GradeDTO> studentList = StreamSupport.stream(students.spliterator(), false).map(x -> new GradeDTO(service.findStudent(x.getIdStudent()).getNume() + " " + service.findStudent(x.getIdStudent()).getPrenume(), x.getIdTema(), Date.from(x.getData().atZone(ZoneId.systemDefault()).toInstant()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), x.getProfesor(), x.getValue(), x.getFeedback()))
                 .collect(Collectors.toList());
         model.setAll(studentList);
@@ -391,7 +402,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
 
     @Override
     public void update(GradeChangeEvent studentChangeEvent) {
-        initializeModel();
+        initializeModel(service.findAll());
     }
 
     public void handleSave(ActionEvent actionEvent) {
@@ -520,7 +531,6 @@ public class GradeController implements Observer<GradeChangeEvent> {
                 File myFile = new File("E:\\GradeBook-Java-JavaFx-master\\src\\main\\resources\\pdfs\\StatisticsReports.pdf");
                 Desktop.getDesktop().open(myFile);
             } catch (IOException ex) {
-                // no application registered for PDFs
             }
         }
     }

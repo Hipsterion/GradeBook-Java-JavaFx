@@ -1,6 +1,5 @@
 package main.java.serviceLayer.services;
 
-
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import main.java.businessLayer.domain.Grade;
@@ -14,10 +13,8 @@ import main.java.utils.events.ChangeEventType;
 import main.java.utils.events.GradeChangeEvent;
 import main.java.utils.observer.Observable;
 import main.java.utils.observer.Observer;
-
 import java.io.*;
 import java.time.LocalDateTime;
-import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +24,6 @@ import java.util.stream.StreamSupport;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
 
 public class GradeBookService implements Observable<GradeChangeEvent> {
     private CrudRepository<String, Grade> gradeRepository;
@@ -76,7 +72,6 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
     public void sendEmailToStudent(String studentEmail) {
         final String username = "mgradebook@gmail.com";  // like yourname@outlook.com
         final String password = "cocolino123";   // password here
-
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -91,7 +86,6 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
                     }
                 });
         session.setDebug(true);
-
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
@@ -99,9 +93,7 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
                     InternetAddress.parse(studentEmail));   // like inzi769@gmail.com
             message.setSubject("You've just got a new GRADE");
             message.setText("Your teacher just gave you a grade. Check it out in the GradeBook app.");
-
             Transport.send(message);
-
             System.out.println("Done");
 
         } catch (MessagingException e) {
@@ -151,9 +143,7 @@ public class GradeBookService implements Observable<GradeChangeEvent> {
     }
 
     @Override
-    public void removeObserver(Observer<GradeChangeEvent> e) {
-
-    }
+    public void removeObserver(Observer<GradeChangeEvent> e) { }
 
     @Override
     public void notifyObservers(GradeChangeEvent t) {

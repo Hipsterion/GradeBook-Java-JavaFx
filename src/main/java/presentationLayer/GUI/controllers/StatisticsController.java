@@ -31,8 +31,6 @@ public class StatisticsController implements Observer<GradeChangeEvent> {
         setUpReport3PieChart();
     }
 
-
-
     @FXML
     PieChart report4PieChart;
     @FXML

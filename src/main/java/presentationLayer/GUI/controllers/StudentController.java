@@ -26,6 +26,7 @@ import main.java.serviceLayer.services.StudentService;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -87,7 +88,7 @@ public class StudentController implements Observer<StudentChangeEvent> {
     public void setService(StudentService service){
         this.service = service;
         this.service.addObserver(this);
-        initializeModel();
+        initializeModel(service.findAll());
     }
 
     public void setPrimaryStage(Stage stage){
@@ -152,20 +153,19 @@ public class StudentController implements Observer<StudentChangeEvent> {
         studentsTableView.setItems(model);
     }
 
-    private void initializeModel() {
-        Iterable<Student> students = service.findAll();
+    private void initializeModel(Iterable<Student> list) {
+        Iterable<Student> students = list;
         List<Student> studentList = StreamSupport.stream(students.spliterator(), false)
                 .collect(Collectors.toList());
         model.setAll(studentList);
     }
 
     private void updateModelAfterSearch(String input){
-        if(input.equals("")) initializeModel();
+        if(input.equals("")) initializeModel(service.findAll());
         else {
             try {
-                Student student = service.findOne(Integer.parseInt(textFieldSearch.getText()));
-                model.clear();
-                model.setAll(student);
+                var students = StreamSupport.stream(service.findAll().spliterator(), false).filter(s -> (s.getNume() + " " + s.getPrenume()).toUpperCase().contains(input.toUpperCase())).collect(Collectors.toList());
+                model.setAll(students);
             }catch (RuntimeException e) {
                 model.clear();
             }
@@ -174,7 +174,7 @@ public class StudentController implements Observer<StudentChangeEvent> {
 
     @Override
     public void update(StudentChangeEvent studentChangeEvent) {
-        initializeModel();
+        initializeModel(service.findAll());
     }
 
     public void handleSave(ActionEvent actionEvent) {
@@ -264,15 +264,12 @@ public class StudentController implements Observer<StudentChangeEvent> {
 
             AnchorPane root = (AnchorPane) loader.load();
 
-           // dialogStage.initModality(Modality.APPLICATION_MODAL);
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             GradeController gradeController = loader.getController();
             gradeController.setService(new GradeBookService(new GradeDBRepository("nota"), new StudentDBRepository("student"), new AssignmentDBRepository("tema")));
             gradeController.setPrimaryStage(primaryStage);
-            //dialogStage.close();
         } catch (IOException | SQLException e) {
-            e.printStackTrace();
         }
     }
 

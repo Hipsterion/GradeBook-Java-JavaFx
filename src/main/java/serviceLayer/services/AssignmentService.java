@@ -15,6 +15,7 @@ import java.util.List;
 public class AssignmentService implements Observable<GradeChangeEvent> {
     private CrudRepository<Integer, Assignment> repository;
     private List<Observer<GradeChangeEvent>> observers = new ArrayList<>();
+
     public AssignmentService(CrudRepository<Integer, Assignment> repository) {
         this.repository = repository;
     }
@@ -22,9 +23,11 @@ public class AssignmentService implements Observable<GradeChangeEvent> {
     public Assignment findOne(Integer id){
         return repository.findOne(id);
     }
+
     public Iterable<Assignment> findAll(){
         return repository.findAll();
     }
+
     public Assignment save(Integer id, String desc, int deadline, LocalDateTime startDate, YearStructure yearStructure) throws ValidationException {
         var tema = new Assignment(id,desc,deadline,startDate, yearStructure);
         return repository.save(tema);
@@ -32,10 +35,10 @@ public class AssignmentService implements Observable<GradeChangeEvent> {
     public Assignment delete(Integer id){
         return repository.delete(id);
     }
+
     public Assignment update(Integer id, String desc, int deadline, LocalDateTime startDate, YearStructure yearStructure){
         var student = new Assignment(id,desc,deadline,startDate, yearStructure);
         return repository.update(student);
-
     }
 
     @Override
@@ -44,9 +47,7 @@ public class AssignmentService implements Observable<GradeChangeEvent> {
     }
 
     @Override
-    public void removeObserver(Observer<GradeChangeEvent> e) {
-
-    }
+    public void removeObserver(Observer<GradeChangeEvent> e) { }
 
     @Override
     public void notifyObservers(GradeChangeEvent t) {

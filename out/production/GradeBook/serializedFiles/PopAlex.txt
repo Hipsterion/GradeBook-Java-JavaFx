@@ -1,4 +1,1 @@
-Tema: 3 ; Nota: 6 ; Predata in saptamana: 2019-12-12 12:23 ; Deadline: 10 ; Feedback: Se putea mai bine
-Tema: 1 ; Nota: 7 ; Predata in saptamana: 2019-10-30 11:32 ; Deadline: 12 ; Feedback: Nice
-Tema: 8 ; Nota: 6 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: E ok
-Tema: 8 ; Nota: 10 ; Predata in saptamana: 2019-11-18 12:00 ; Deadline: 7 ; Feedback: 
+Tema: 3 ; Nota: 10 ; Predata in saptamana: 2019-12-09 12:00 ; Deadline: 10 ; Feedback:
