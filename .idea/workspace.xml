@@ -6,7 +6,9 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="629802bd-6b47-434f-b410-c37c59d081a3" name="Default Changelist" comment="" />
+    <list default="true" id="f11559d5-d0c6-4096-8a05-b0fae72982ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/businessLayer/repositories/databasePersistance/AbstractDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/businessLayer/repositories/databasePersistance/AbstractDBRepository.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/build.gradle">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
