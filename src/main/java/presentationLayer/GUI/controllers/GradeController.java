@@ -68,23 +68,23 @@ public class GradeController implements Observer<GradeChangeEvent> {
     @FXML
     JFXTextField textFieldProfesor;
     @FXML
-    JFXTextField textFieldValue;
+    JFXTextField textFieldGradeValue;
     @FXML
-    JFXTextArea textArea;
+    JFXTextArea textAreaFeedback;
     @FXML
     JFXComboBox<String> temaComboBox;
     @FXML
     JFXDatePicker datePicker;
     @FXML
-    JFXCheckBox sapt1;
+    JFXCheckBox checkBoxFirstWeek;
     @FXML
-    JFXCheckBox sapt2;
+    JFXCheckBox checkBoxSecondWeek;
     @FXML
     ComboBox<String> reportsComboBox;
     @FXML
     ImageView statisticsIcon;
     @FXML
-    TextField searchTextField;
+    TextField textFieldSearch;
 
     public void setService(GradeBookService service) {
         this.service = service;
@@ -94,8 +94,8 @@ public class GradeController implements Observer<GradeChangeEvent> {
         setDefaultAssignmentText();
         setUpDatePicker();
         setUpCheckBox();
-        textFieldValue.textProperty().addListener((obs, oldT, newT) -> {
-            if (StringExtensions.isInteger(textFieldValue.getText()))
+        textFieldGradeValue.textProperty().addListener((obs, oldT, newT) -> {
+            if (StringExtensions.isInteger(textFieldGradeValue.getText()))
                 setPreprocessedValues();
         });
         initializeModel(service.findAll());
@@ -118,63 +118,63 @@ public class GradeController implements Observer<GradeChangeEvent> {
         if (temaComboBox.getItems().contains(temaComboBox.getValue())) {
             YearStructure anUniversitar = YearStructure.now();
             int diff = getDeadLineWeek() - anUniversitar.getSemestru(datePicker.getValue().atStartOfDay()).getWeek(datePicker.getValue().atStartOfDay());
-            textFieldValue.resetValidation();
+            textFieldGradeValue.resetValidation();
             if (diff >= 0) {
-                sapt1.setSelected(false);
-                sapt2.setSelected(false);
-                sapt1.setVisible(false);
-                sapt2.setVisible(false);
-                textFieldValue.setText("10");
-                if (textArea.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA") || textArea.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA"))
-                    textArea.setText("");
+                checkBoxFirstWeek.setSelected(false);
+                checkBoxSecondWeek.setSelected(false);
+                checkBoxFirstWeek.setVisible(false);
+                checkBoxSecondWeek.setVisible(false);
+                textFieldGradeValue.setText("10");
+                if (textAreaFeedback.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA") || textAreaFeedback.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA"))
+                    textAreaFeedback.setText("");
             } else if (diff >= -1) {
-                sapt1.setSelected(false);
-                sapt1.setVisible(true);
-                textFieldValue.setText("9");
-                if (!textArea.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA"))
-                    textArea.setText("Ai intarziat o saptamana.");
+                checkBoxFirstWeek.setSelected(false);
+                checkBoxFirstWeek.setVisible(true);
+                textFieldGradeValue.setText("9");
+                if (!textAreaFeedback.getText().toUpperCase().contains("AI INTARZIAT O SAPTAMANA"))
+                    textAreaFeedback.setText("Ai intarziat o saptamana.");
             } else if (diff >= -2) {
-                sapt1.setSelected(false);
-                sapt1.setVisible(true);
-                sapt2.setSelected(false);
-                sapt2.setVisible(true);
-                textFieldValue.setText("8");
-                if (!textArea.getText().toUpperCase().contains("AI INTARZIAT 2 SAPTAMANI"))
-                    textArea.setText("Ai intarziat 2 saptamani.");
+                checkBoxFirstWeek.setSelected(false);
+                checkBoxFirstWeek.setVisible(true);
+                checkBoxSecondWeek.setSelected(false);
+                checkBoxSecondWeek.setVisible(true);
+                textFieldGradeValue.setText("8");
+                if (!textAreaFeedback.getText().toUpperCase().contains("AI INTARZIAT 2 SAPTAMANI"))
+                    textAreaFeedback.setText("Ai intarziat 2 saptamani.");
             } else {
-                sapt1.setSelected(false);
-                sapt2.setSelected(false);
-                sapt1.setVisible(false);
-                sapt2.setVisible(false);
-                textFieldValue.setText("1");
-                textArea.setText("Nu se mai poate preda tema. Se va pune 1");
+                checkBoxFirstWeek.setSelected(false);
+                checkBoxSecondWeek.setSelected(false);
+                checkBoxFirstWeek.setVisible(false);
+                checkBoxSecondWeek.setVisible(false);
+                textFieldGradeValue.setText("1");
+                textAreaFeedback.setText("Nu se mai poate preda tema. Se va pune 1");
             }
         }
     }
 
     private void setUpCheckBox() {
-        sapt1.selectedProperty().addListener(new ChangeListener<Boolean>() {
+        checkBoxFirstWeek.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (newValue) {
-                    if (StringExtensions.isInteger(textFieldValue.getText()))
-                        textFieldValue.setText(String.valueOf(Integer.parseInt(textFieldValue.getText()) + 1));
+                    if (StringExtensions.isInteger(textFieldGradeValue.getText()))
+                        textFieldGradeValue.setText(String.valueOf(Integer.parseInt(textFieldGradeValue.getText()) + 1));
                 } else {
-                    if (StringExtensions.isInteger(textFieldValue.getText()))
-                        textFieldValue.setText(String.valueOf(Integer.parseInt(textFieldValue.getText()) - 1));
+                    if (StringExtensions.isInteger(textFieldGradeValue.getText()))
+                        textFieldGradeValue.setText(String.valueOf(Integer.parseInt(textFieldGradeValue.getText()) - 1));
                     setPreprocessedValues();
                 }
             }
         });
-        sapt2.selectedProperty().addListener(new ChangeListener<Boolean>() {
+        checkBoxSecondWeek.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (newValue) {
-                    if (StringExtensions.isInteger(textFieldValue.getText()))
-                        textFieldValue.setText(String.valueOf(Integer.parseInt(textFieldValue.getText()) + 1));
+                    if (StringExtensions.isInteger(textFieldGradeValue.getText()))
+                        textFieldGradeValue.setText(String.valueOf(Integer.parseInt(textFieldGradeValue.getText()) + 1));
                 } else {
-                    if (StringExtensions.isInteger(textFieldValue.getText()))
-                        textFieldValue.setText(String.valueOf(Integer.parseInt(textFieldValue.getText()) - 1));
+                    if (StringExtensions.isInteger(textFieldGradeValue.getText()))
+                        textFieldGradeValue.setText(String.valueOf(Integer.parseInt(textFieldGradeValue.getText()) - 1));
                     setPreprocessedValues();
                 }
             }
@@ -190,12 +190,12 @@ public class GradeController implements Observer<GradeChangeEvent> {
     private void setPreprocessedValues() {
         int diff = service.getPunctePenalizare(datePicker.getValue().atStartOfDay(), getTemaId());
         int maxN = 10 + diff;
-        if (sapt1.isSelected()) maxN++;
-        if (sapt2.isSelected()) maxN++;
+        if (checkBoxFirstWeek.isSelected()) maxN++;
+        if (checkBoxSecondWeek.isSelected()) maxN++;
         if (diff <= -3) maxN = 1;
-        if (StringExtensions.isInteger(textFieldValue.getText())) {
-            if (Integer.parseInt(textFieldValue.getText()) > maxN) textFieldValue.setText(String.valueOf(maxN));
-            if (Integer.parseInt(textFieldValue.getText()) < 1) textFieldValue.setText(String.valueOf(1));
+        if (StringExtensions.isInteger(textFieldGradeValue.getText())) {
+            if (Integer.parseInt(textFieldGradeValue.getText()) > maxN) textFieldGradeValue.setText(String.valueOf(maxN));
+            if (Integer.parseInt(textFieldGradeValue.getText()) < 1) textFieldGradeValue.setText(String.valueOf(1));
         }
     }
 
@@ -270,7 +270,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
     @FXML
     public void initialize() {
         setUpTable();
-        searchTextField.textProperty().addListener((obs, oldText, newText) -> updateModelAfterSearch(newText));
+        textFieldSearch.textProperty().addListener((obs, oldText, newText) -> updateModelAfterSearch(newText));
         setUpComboBoxValidation(studentComboBox, new Predicate() {
             @Override
             public boolean test(Object o) {
@@ -295,7 +295,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
                 return StringExtensions.matchesFullNameFormat((String) o);
             }
         }, "This must be a combination of 2 names");
-        setUpTextFieldValidation(textFieldValue, new Predicate() {
+        setUpTextFieldValidation(textFieldGradeValue, new Predicate() {
             @Override
             public boolean test(Object o) {
                 return StringExtensions.isInteger((String) o);
@@ -317,7 +317,6 @@ public class GradeController implements Observer<GradeChangeEvent> {
             }
         }
     }
-
 
     private void setUpDatePickerValidation(JFXDatePicker datePicker, Predicate predicate, String errorMessage) {
         var emptyValidator = new RequiredFieldValidator();
@@ -410,9 +409,9 @@ public class GradeController implements Observer<GradeChangeEvent> {
         temaComboBox.validate();
         datePicker.validate();
         textFieldProfesor.validate();
-        textFieldValue.validate();
-        textArea.validate();
-        if (studentComboBox.getActiveValidator() != null || temaComboBox.getActiveValidator() != null || datePicker.getActiveValidator() != null || textFieldProfesor.getActiveValidator() != null || textFieldValue.getActiveValidator() != null || textArea.getActiveValidator() != null)
+        textFieldGradeValue.validate();
+        textAreaFeedback.validate();
+        if (studentComboBox.getActiveValidator() != null || temaComboBox.getActiveValidator() != null || datePicker.getActiveValidator() != null || textFieldProfesor.getActiveValidator() != null || textFieldGradeValue.getActiveValidator() != null || textAreaFeedback.getActiveValidator() != null)
             MessageAlert.showErrorMessage(null, "One or more fields contain invalid data. Go back");
         else {
             try {
@@ -425,7 +424,7 @@ public class GradeController implements Observer<GradeChangeEvent> {
                 Scene scene = new Scene(root);
                 dialogStage.setScene(scene);
                 PreviewAddGradeController editStudentViewController = loader.getController();
-                editStudentViewController.setService(service, dialogStage, new GradeDTO(studentComboBox.getValue(), getTemaId(), datePicker.getValue(), textFieldProfesor.getText(), Integer.parseInt(textFieldValue.getText()), textArea.getText()));
+                editStudentViewController.setService(service, dialogStage, new GradeDTO(studentComboBox.getValue(), getTemaId(), datePicker.getValue(), textFieldProfesor.getText(), Integer.parseInt(textFieldGradeValue.getText()), textAreaFeedback.getText()));
                 dialogStage.showAndWait();
 
             } catch (IOException e) {
@@ -443,16 +442,10 @@ public class GradeController implements Observer<GradeChangeEvent> {
         datePicker.resetValidation();
         textFieldProfesor.clear();
         textFieldProfesor.resetValidation();
-        textFieldValue.clear();
-        textFieldValue.resetValidation();
-        textArea.clear();
-        textArea.resetValidation();
-    }
-
-    public void handleUpdateStudent(ActionEvent actionEvent) {
-    }
-
-    public void handleDelete(ActionEvent actionEvent) {
+        textFieldGradeValue.clear();
+        textFieldGradeValue.resetValidation();
+        textAreaFeedback.clear();
+        textAreaFeedback.resetValidation();
     }
 
     public void handleStudentsButton(ActionEvent actionEvent) {
@@ -513,7 +506,6 @@ public class GradeController implements Observer<GradeChangeEvent> {
             root = (AnchorPane) loader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Preview Statistics");
-            //dialogStage.initModality(Modality.APPLICATION_MODAL);
             Scene scene = new Scene(root);
             dialogStage.setScene(scene);
             StatisticsController statisticsController = loader.getController();

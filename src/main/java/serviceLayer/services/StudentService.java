@@ -53,9 +53,7 @@ public class StudentService implements Observable<StudentChangeEvent> {
     }
 
     @Override
-    public void removeObserver(Observer<StudentChangeEvent> e) {
-
-    }
+    public void removeObserver(Observer<StudentChangeEvent> e) { }
 
     @Override
     public void notifyObservers(StudentChangeEvent t) {

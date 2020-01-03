@@ -15,7 +15,6 @@ public class LogicLinker {
             else if(!textField.getStyleClass().contains("error")){
                 textField.getStyleClass().add("error");
                 label.setVisible(true);
-
             }
             else label.setVisible(true);
         }
